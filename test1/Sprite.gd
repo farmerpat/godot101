@@ -23,12 +23,12 @@ func _ready():
 	# set pos to the center of the screen
 	pos = screen_size / 2
 	set_pos(pos)
-	
+
 	# this tells the spirte to do something every frame
 	# the _process fn determines what this is
 	set_process(true)
-	
-	
+
+
 # delta:
 # how much time has passed since last frame
 # around 1/60th but often a bit less b/c processor time
@@ -46,7 +46,7 @@ func _process (delta):
 	# set_rot(get_rot() + PI * delta * 1)
 	set_rot(get_rot() + spin * delta)
 	pos += vel * delta
-	
+
 	if (pos.x >= (screen_size.width - extents.width)):
 		# this prevents sprite from getting stuck
 		# when it has already gone past the edge
@@ -60,11 +60,9 @@ func _process (delta):
 	if (pos.y >= (screen_size.height - extents.height)):
 		pos.y = screen_size.height - extents.height
 		vel.y *= -1
-	
+
 	if (pos.y <= (extents.height)):
 		pos.y = extents.height
 		vel.y *= -1
 
 	set_pos(pos)
-
-

@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://art/background.png" type="Texture" id=1]
+[ext_resource path="res://player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://platform.tscn" type="PackedScene" id=3]
+
+[node name="main" type="Node"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+scroll/offset = Vector2( 0, 0 )
+scroll/base_offset = Vector2( 0, 0 )
+scroll/base_scale = Vector2( 1, 1 )
+scroll/limit_begin = Vector2( 0, 0 )
+scroll/limit_end = Vector2( 0, 0 )
+scroll/ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+motion/scale = Vector2( 0.5, 0.5 )
+motion/offset = Vector2( 0, 0 )
+motion/mirroring = Vector2( 0, 0 )
+
+[node name="background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+
+transform/pos = Vector2( 2933.27, 333.027 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 0, 0, 12288, 1536 )
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+
+[node name="platform" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 487.063, 507.961 )
+
+[node name="platform1" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1003.41, 300.759 )
+
+[node name="platform2" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 2180.42, 343.82 )
+
+[node name="platform3" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1561.16, 522.218 )
+
+

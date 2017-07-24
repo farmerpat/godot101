@@ -1,0 +1,10 @@
+to get pixelated sprites:
+  in inpsector:
+    ImageTexture
+      - click flags
+        - uncheck filter
+
+  gobally:
+    ProjectSettings
+      ImageLoader
+        - uncheck filter
