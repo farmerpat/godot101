@@ -8,3 +8,22 @@ to get pixelated sprites:
     ProjectSettings
       ImageLoader
         - uncheck filter
+
+when you re-implement pong
+  do it with both
+    KinematicBody2d physics ("arcade physics")
+    RigidBody2d physics ("natural? physics")
+
+aggregate RM ideas its repository!
+  the his descent (e.g. robes darkening, also the existential piece)
+    contrasting with the "ascention" of his targets
+    e.g. level 1: targets are scumbag murderers (maybe its in a prison or something)
+         level n: targets are innocents
+
+  the more pure the baddies, the more damage they can do.
+    so in early levels, the harmful "light" they (non-targets)
+    emit/fire at you/transfer via contact does less damage
+
+  this brings up the idea of player HP as opposed to one-shot deaths
+  or the player losing pieces of himself as he approaches game over.
+  really, that might be a possibility..think mario losing his fire power...
