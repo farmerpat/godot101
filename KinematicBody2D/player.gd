@@ -8,7 +8,7 @@ const JUMP_SPEED = -1000
 const MIN_JUMP = -500
 
 onready var sprite = get_node("sprite")
-onready var ground_ray = get_node("ground_ray") 
+onready var ground_ray = get_node("ground_ray")
 var acc = Vector2()
 var vel = Vector2()
 
@@ -30,13 +30,13 @@ func _fixed_process(delta):
 	acc.y = GRAVITY
 	acc.x = Input.is_action_pressed("ui_right") - Input.is_action_pressed("ui_left")
 	acc.x *= ACCEL
-	
+
 	if acc.x == 0:
 		acc.x = vel.x * FRICTION * delta
 
 	vel += acc * delta
 	vel.x = clamp(vel.x, -MAX_SPEED, MAX_SPEED)
-	
+
 	# if collision occurs on move, the object will stop moving,
 	# and there is still a portion of the movement left over
 	# we remedy this by leveraging the "collision normal"
@@ -52,13 +52,13 @@ func _fixed_process(delta):
 	# vector is trying to move him down (past the ground),
 	# and to the right.  It can't complete the movement
 	# see http://kidscancode.org/blog/2017/04/godot_101_09/
-	# 14:16 for an explanation 
+	# 14:16 for an explanation
 	var unused_motion = move(vel * delta)
-	
+
 	if is_colliding():
 		var collision_normal = get_collision_normal()
 		var motion = collision_normal.slide(unused_motion)
-		
+
 		# because otherwise, the velocity vector
 		# keeps grown as we continue colliding with the ground
 		vel = collision_normal.slide(vel)
